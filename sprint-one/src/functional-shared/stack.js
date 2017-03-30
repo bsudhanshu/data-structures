@@ -15,7 +15,7 @@ stackMethods.push = function(value) {
   this.counter++;
 };
 stackMethods.pop = function() {
-  if(this.counter > 0) {
+  if (this.counter > 0) {
     this.counter--;
   }
   return this[this.counter];
