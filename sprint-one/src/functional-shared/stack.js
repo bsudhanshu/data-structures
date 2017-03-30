@@ -5,24 +5,24 @@ var Stack = function() {
   newStack.counter = 0;
   _.extend(newStack, stackMethods);
 
-  return newStack
+  return newStack;
 };
 
 var stackMethods = {};
 
-stackMethods.push = function(value){
+stackMethods.push = function(value) {
   this[this.counter] = value;
   this.counter++;
 };
-stackMethods.pop = function(){
-  if(this.counter > 0){
-  this.counter--;
+stackMethods.pop = function() {
+  if(this.counter > 0) {
+    this.counter--;
   }
   return this[this.counter];
 };
 
-stackMethods.size = function(){
-	return this.counter;
+stackMethods.size = function() {
+  return this.counter;
 };
 
 
