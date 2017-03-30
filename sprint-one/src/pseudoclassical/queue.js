@@ -17,10 +17,10 @@ Queue.prototype.dequeue = function(){
 
 Queue.prototype.size = function(value){
   if(this.enqueueCounter - this.dequeueCounter < 0) {
-  	return 0;
+    return 0;
   } else {
-  return this.enqueueCounter - this.dequeueCounter;
-    }	
+    return this.enqueueCounter - this.dequeueCounter;
+  }	
 };
 
 var newQueue = new Queue();
