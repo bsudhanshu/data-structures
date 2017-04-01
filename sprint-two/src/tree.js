@@ -21,15 +21,15 @@ treeMethods.contains = function(target, tree) {
   var searchTree = function(tree) {
     if (tree.value === target) {
       flag = true;
-      }
+    }
     if (tree.children) {
       for (var i = 0; i < tree.children.length; i++) {
         searchTree(tree.children[i]);
-      	}
       }
-	}
-   searchTree(this);
-   return flag;
+    }
+  };
+  searchTree(this);
+  return flag;
 };
 
 
