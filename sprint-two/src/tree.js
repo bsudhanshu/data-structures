@@ -14,24 +14,23 @@ var treeMethods = {};
 treeMethods.addChild = function(value) {
   var child = Tree(value);
   this.children.push(child);
-  console.log(this)
+  console.log(JSON.stringify(this));
 };
 
-treeMethods.contains = function(target) {
-  var truthTest = function (child) {
-  	if (this.children.length === 0) {
-  		return false;
-  	}
-    if (child.value === target) {
-      return true;
-    } else {
-      for (var i = 0; i < child.children.length; i++) {
-        truthTest(child.children[i]);
-      }	
-    }
-    return false;
-  };
-  return truthTest(this); 
+treeMethods.contains = function(target, tree) {
+  var flag = false;
+  var searchTree = function(tree) {
+    if (tree.value === target) {
+      flag = true;
+      }
+    if (tree.children) {
+      for (var i = 0; i < tree.children.length; i++) {
+        searchTree(tree.children[i]);
+      	}
+      }
+	}
+   searchTree(this);
+   return flag;
 };
 
 
